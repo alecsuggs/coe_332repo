@@ -81,7 +81,7 @@ data in json format.
 
 The data should be output in this format:
 
-`
+```
 {
   "meteorite_landings": [
     {
@@ -102,6 +102,6 @@ The data should be output in this format:
       "reclat": "-9.4378",
       "reclong": "49.5751"
     },
-`
+```
 
 This is a standard json output format.
