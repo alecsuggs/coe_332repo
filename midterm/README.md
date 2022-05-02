@@ -17,6 +17,7 @@ The data used by the tracker application can be downloaded from the following li
 To download in Linux terminal:
 
 `wget https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml`
+
 `wget https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesINT01.xml`
 
 ## Instructions to build a container from Dockerfile
@@ -37,13 +38,16 @@ Next check files that should be in the current directory:
 After confirming that all these files are in the current directory run these commands in the linux terminal:
 
 `make build`
+
 `make run`
 
 The docker container should be running at this point. If you do not want to build your own container
 a working image can be downloaded from docker hub with these commands in the linux terminal:
 
 `docker login`
+
 `make pull`
+
 `make run`
 
 ## Instructions to interact with the application:
