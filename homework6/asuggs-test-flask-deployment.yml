@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asuggs-test-flask-deployment
+  labels:
+    username: asuggs
+    env: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: asuggs-test-flask
+  template:
+    metadata:
+      labels:
+        app: asuggs-test-flask
+        username: asuggs
+        env: test
+    spec:
+      containers:
+        - name: flaskdeployment
+          imagePullPolicy: Always
+          image: python:3.9
+          ports:
+            - containerPort: 5000

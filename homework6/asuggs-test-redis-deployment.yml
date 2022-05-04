@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asuggs-test-redis-deployment
+  labels:
+    username: asuggs
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asuggs-test-redis
+  template:
+    metadata:
+      labels:
+        username: asuggs
+        env: test
+        app: asuggs-test-redis
+    spec:
+      containers:
+        - name: redisdeployment
+          imagePullPolicy: Always
+          image: redis:6
+          volumeMounts:
+          - name: asuggs-test-redis-pvc
+            mountPath: "/data"
+      volumes:
+      - name: asuggs-test-redis-pvc
+        persistentVolumeClaim:
+          claimName: asuggs-test-redis-pvc
