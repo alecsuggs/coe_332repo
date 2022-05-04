@@ -23,9 +23,11 @@ To download in Linux terminal:
 ## Instructions to build a container from Dockerfile
 
 First the user must create a text file named `requirements.txt` with these three lines in it:
-`Flask==2.0.3
+```
+Flask==2.0.3
 pytest==7.0.0
-xmltodict`
+xmltodict
+```
 
 Next check files that should be in the current directory:
 1. Dockerfile
@@ -37,9 +39,9 @@ Next check files that should be in the current directory:
 
 After confirming that all these files are in the current directory run these commands in the linux terminal:
 
-`make build`
+`docker build -t <username>/app:1.0 .`
 
-`make run`
+`docker run --name "ISStrackerapp" -p <yourport#>:5000 <username>/app:1.0`
 
 The docker container should be running at this point. If you do not want to build your own container
 a working image can be downloaded from docker hub with these commands in the linux terminal:
@@ -49,6 +51,10 @@ a working image can be downloaded from docker hub with these commands in the lin
 `make pull`
 
 `make run`
+
+To run on a port other than 5033:
+
+`docker run --name "ISStrackerapp" -p <portnumber>:5000 alecsuggs/app:1.0`
 
 ## Instructions to interact with the application:
 
@@ -86,18 +92,23 @@ from the application with regard to the ISS tracking are in the dictionary
 format. Below is a sample request and response example:
 
 User input:
+
 `curl -X POST 127.0.0.1:5032/load`
 
 Application Output:
+
 `data loaded successfully!`
 
 Another example....
 
 User Input:
+
 `curl 127.0.0.1:5032/countries/Australia/regions/Victoria/cities`
 
 Application Output:
-`{
+
+```
+{
   "Ballarat": 956,
   "Benalla": 976,
   "Bendigo": 993,
@@ -113,7 +124,8 @@ Application Output:
   "Tylden": 1178,
   "Warrnambool": 1188,
   "Yarram": 1210
-}`
+}
+```
 
 ## Data Citations:
 
