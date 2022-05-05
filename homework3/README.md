@@ -11,7 +11,7 @@ The data on the water quality comes in the json format. This data is
 mandatory for the analysis of the water turbidity and must be in the 
 same directory as analyzewater.py.
 
-##JSON data package dowload link:
+## JSON data package dowload link:
 
 https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json
 
