@@ -1,1 +1,1 @@
-This repository is where all assignments from the class COE 332 will be stored
+This is a homework repository for the course coe 332.
